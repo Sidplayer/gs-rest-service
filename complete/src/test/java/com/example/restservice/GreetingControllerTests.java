@@ -34,8 +34,12 @@ public class GreetingControllerTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	/* Eu Sidney Santos Simões como testador do software gs-rest-service desejo que a classe GreetingControllerTests tenha todos os seus métodos comentados com a descrição do objetivo do teste unitário do método referido. */
+
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
+
+		/*Função de teste para verificar se a chamada greeting está retornando o resultado 'Hello, World!' de forma eficaz*/
 
 		this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
@@ -43,6 +47,9 @@ public class GreetingControllerTests {
 
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
+
+		/*Função para testar se a variável 'name' está recebendo valores de forma correta*/
+		
 
 		this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
 				.andDo(print()).andExpect(status().isOk())
